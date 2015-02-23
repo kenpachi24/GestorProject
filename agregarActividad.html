@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Actividad</title>
+	<link rel="stylesheet" href="">
+	<!-- VALIDAR TIPO DE ARCHIVO SUBIDO-->
+	<script language="javascript">
+	function comprueba_extension(formulario, archivo) {
+		extensiones_permitidas = new Array(".png", ".gif", ".jpg", ".jpeg", ".doc",".docx", ".xls", ".xlsx", ".pdf",".odt");
+		error = "";
+		if (!archivo) {
+				//Si no tengo archivo, es que no se ha seleccionado un archivo en el formulario
+			error = "No has seleccionado ningún archivo";
+		}else{
+			//recupero la extensión de este nombre de archivo
+			extension = (archivo.substring(archivo.lastIndexOf("."))).toLowerCase();
+			//alert (extension);
+			//compruebo si la extensión está entre las permitidas
+			permitida = false;
+			for (var i = 0; i < extensiones_permitidas.length; i++) {
+				if (extensiones_permitidas[i] == extension) { 
+					permitida = true;
+					break;
+				}
+			}
+			if (!permitida) {
+				error = "Sólo se pueden subir archivos con extensiones: " + extensiones_permitidas.join();
+			}else{
+				//Archivo permitido
+				alert ("Archivo valido.");
+				formulario.submit();
+				return 1;
+			}
+		}
+		//si estoy aqui es que no se ha podido submitir
+		alert (error);
+		return 0;
+	}
+	</script>
+
+
+	<!--<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+ 	<script type="text/javascript" src="bootstrap-3.3.2-dist/js/jquery-1.11.2.min.js"></script>
+
+	
+
+</head>
+<body>
+	<h2> <CENTER> Actividad </CENTER></h1>
+
+	<form action="php/registraActividad.php" method="post" enctype="multipart/form-data" name="datos">
+		<table border=0 align=CENTER >
+			<TR>
+				<TD>Código: </TD>
+				<TD> <input type="text" name="codigoActi"> </TD>
+			</TR>
+			<tr>
+				<TD>Nombre: </TD>
+				<TD> <input type="text" name="nombreActi"> </TD>
+			</tr>
+			<tr>
+				<TD>Fecha de inicio: </TD>
+				<TD> <!--<input type="text" name="fechaIniProy"> -->
+				<input type="date" name="fechaIniActi" step="1" min="1900-01-01" max="2099-12-31">
+				</TD>
+			</tr>
+			<tr>
+				<TD>Fecha de finalización: </TD>
+				<TD> <input type="date" name="fechafinActi" step="1" min="1900-01-01" max="2099-12-31">
+				</TD>
+			</tr>
+			<tr>
+				<TD>Monto: </TD>
+				<TD> <input type="number" name="montoActi" requared pattern="[0-9]*" title="Ingrese un valor numérico"> </TD>
+			</tr>
+			<tr>
+				<TD>Descripción: </TD>
+				<TD> <textarea rows="8" cols="40" name="descripcionActi"> </textarea> </TD>
+			</tr>
+			<tr>
+				<td>Adjunto: </td> <td> 
+				<!--<input type="file" name="adjunto" id="archivo" accept="application/vnd.ms-excel, .pdf, image/* " /> -->
+				<input type="file" name="adjunto"  /> 
+				</td>
+				<td>
+				<input type="button" name="Submit" value="Enviar" onclick="comprueba_extension(this.form, this.form.adjunto.value)">
+				</td>
+			</tr>
+			<tr>
+				<TD>Estado: </TD>
+				<TD> <select name="estadoActi" id="punto" style="display:none;">
+					<option value=1>Activo</option>
+					<option value=2>Finalizado</option>
+					
+				</select> </TD>
+			</tr>
+
+			<TR> <TD> <input type="submit" name="registroNuevoActi" value="Registrar"  /> </TD></TR>	
+		</table>
+	</form>
+
+</body>
+</html>

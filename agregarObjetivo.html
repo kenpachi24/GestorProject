@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ojetivo</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h2> <CENTER> Objetivo </CENTER></h1>
+
+	<form action="php/registrarObjetivo.php" method="post" enctype="multipart/form-data" name="datos">
+		<table border=0 align=CENTER >
+			<TR>
+				<TD>Código: </TD>
+				<TD> <input type="text" name="codigoObj"> </TD>
+			</TR>
+			<tr>
+				<TD>Nombre: </TD>
+				<TD> <input type="text" name="nombreObj"> </TD>
+			</tr>
+			<tr>
+				<TD>Fecha de inicio: </TD>
+				<TD> <!--<input type="text" name="fechaIniProy"> -->
+				<input type="date" name="fechaIniObj" step="1" min="1900-01-01" max="2099-12-31">
+				</TD>
+			</tr>
+			<tr>
+				<TD>Fecha de finalización: </TD>
+				<TD> <input type="date" name="fechafinObj" step="1" min="1900-01-01" max="2099-12-31">
+				</TD>
+			</tr>
+			<tr>
+				<TD>Monto: </TD>
+				<TD> <input type="text" name="montoObj"> </TD>
+			</tr>
+			<tr>
+				<TD>Descripción: </TD>
+				<TD> <textarea rows="8" cols="40" name="descripcionObj"> </textarea> </TD>
+			</tr>
+			<tr>
+				<TD>Estado: </TD>
+				<TD> <select name="estadoObj" >
+					<option value=1>Activo</option>
+					<option value=2>Finalzizado</option>
+					
+				</select> </TD>
+			</tr>
+			<TR> <TD> <input type="submit" name="registroNuevoObj" value="Registrar" /> </TD></TR>	
+		</table>
+	</form>
+
+</body>
+</html>

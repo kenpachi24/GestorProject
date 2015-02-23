@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Meta</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h2> <CENTER> Meta </CENTER></h1>
+
+	<form action="php/registrarMeta.php" method="post" enctype="multipart/form-data" name="datos">
+		<table border=0 align=CENTER >
+			<TR>
+				<TD>Código: </TD>
+				<TD> <input type="text" name="codigoMeta"> </TD>
+			</TR>
+			<tr>
+				<TD>Nombre: </TD>
+				<TD> <input type="text" name="nombreMeta"> </TD>
+			</tr>
+			<tr>
+				<TD>Fecha de inicio: </TD>
+				<TD> <!--<input type="text" name="fechaIniProy"> -->
+				<input type="date" name="fechaIniMeta" step="1" min="1900-01-01" max="2099-12-31">
+				</TD>
+			</tr>
+			<tr>
+				<TD>Fecha de finalización: </TD>
+				<TD> <input type="date" name="fechafinMeta" step="1" min="1900-01-01" max="2099-12-31">
+				</TD>
+			</tr>
+			<tr>
+				<TD>Monto: </TD>
+				<TD> <input type="text" name="montoMeta"> </TD>
+			</tr>
+			<tr>
+				<TD>Descripción: </TD>
+				<TD> <textarea rows="8" cols="40" name="descripcionMeta"> </textarea> </TD>
+			</tr>
+			<tr>
+				<TD>Estado: </TD>
+				<TD> <select name="estadoMeta" >
+					<option value=1>Activo</option>
+					<option value=2>Finalizado</option>
+					
+				</select> </TD>
+			</tr>
+			<TR> <TD> <input type="submit" name="registroNuevoMeta" value="Registrar" /> </TD></TR>	
+		</table>
+	</form>
+
+</body>
+</html>

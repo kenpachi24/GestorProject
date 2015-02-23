@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="DIMA">
+      <meta name="author" content="DIMA">
+      <link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" />
+      <link href="estilos/signin.css" rel="stylesheet">
+
+    <title>Inicio</title>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="header">
+        <h3 class="text-muted">Gestión de Proyectos</h3>
+        <img src="img/Logo_Dima.png" height="54" width="269" alt=""></a>
+      </div>
+
+      <form class="form-signin" action="php/autenticar.php" method="POST" name="formAutenticar">
+        <h2 class="form-signin-heading">Inicio de Sesión</h2>
+        <label for="inputEmail" class="sr-only">Usuario</label>
+        <input type="input" name="username" class="form-control" placeholder="Usuario" required autofocus>
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" name="contrasena" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Autenticarse</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <script srv="bootstrap-3.3.2-dist/js/jquery.js"></script>
+    <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
