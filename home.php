@@ -17,11 +17,6 @@
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
 
-
-
-
-
-
   </head>
 
   <body>
